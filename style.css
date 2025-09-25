@@ -763,9 +763,13 @@ color: #2c3e50;
 }
 
 .courseimg img {
-  width: 100%;
-  height: 180px;
+  width: 90%;
+  height: 220px;
   object-fit: cover;
+  position: relative;
+  left: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
 }
 
 .rating {
@@ -831,6 +835,28 @@ color: #2c3e50;
 .course-info i {
   margin-right: 5px;
   color: #3498db;
+
+}
+
+@media (max-width: 376px) {
+  .courseimg img {
+  width: 90%;
+  height: 220px;
+  left: 13.5px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+}
+
+@media (max-width: 376px) {
+  .courseimg img {
+  width: 90%;
+  height: 200px;
+  left: 12px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
 
 }
 
@@ -972,6 +998,135 @@ color: #2c3e50;
   }
 }
 
+
+/* section newsletter */
+
+.news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background: linear-gradient(to right, #e0f2f1, #bbdefb, #90caf9); */
+  background: url("./image/background.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.letter {
+  background: linear-gradient(to right, #e0f2f1, #bbdefb, #90caf9);
+  max-width: 650px;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.letter:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+.letter h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+}
+
+.letter h2 .highlight {
+  color: #2d6cdf; 
+}
+
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+
+}
+
+.benefits li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefits i {
+  color: #009688;
+  font-size: 1.1rem;
+}
+
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;   
+  margin-top: 25px;
+  gap: 10px;
+  width: 100%;
+}
+
+.newsletter-form input {
+  flex: 1;
+  min-width: 200px;
+  max-width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.newsletter-form input:focus {
+  border-color: #2d6cdf;
+  box-shadow: 0 0 6px rgba(45, 108, 223, 0.4);
+}
+
+.btn-subscribe {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #00897b;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap; 
+}
+
+.btn-subscribe:hover {
+  background: #00695c;
+}
+
+
+@media (max-width: 500px) {
+  .newsletter-form {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .newsletter-form input,
+  .btn-subscribe {
+    width: 100%; 
+  }
+}
 
 
 
