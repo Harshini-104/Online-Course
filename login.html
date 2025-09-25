@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Course Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <!-- header section -->
+  <header class="header">
+    <nav>
+      <div class="logo">
+        <img src="./image/logo-removebg-preview.png" alt="">
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./service.html">Service</a></li>
+        <li><a href="./service.html">FAQs</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+  <div class="login-wrapper">
+    <!-- Left side image -->
+    <!-- <div class="login-image">
+      <img src="./image/login.jpg" alt="Online Learning">
+    </div> -->
+
+    <!-- Right side login form -->
+    <div class="login-form">
+      <div class="form-box">
+        <h2>Welcome Back!</h2>
+        <p class="subtitle">Login to access your courses</p>
+
+        <form>
+          <div class="input-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+
+          <div class="links">
+            <a href="#">Forgot Password?</a>
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

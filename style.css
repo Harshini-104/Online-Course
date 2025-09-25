@@ -41,6 +41,37 @@
   background-size: cover;
 }
 
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 999;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 14px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.mode-toggle:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Optional: dark mode styles using CSS variables */
+body {
+  --bg-color: #f5f7fa;
+  --text-color: #222;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark-mode {
+  --bg-color: #1c1c1c;
+  --text-color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 
 /*Section Header */
 
