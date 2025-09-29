@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Trail</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /*Section Header */
+
+  .header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .logo img {
+    width: 140px;
+    height: auto;
+    filter: brightness(0) invert(1);
+
+  }
+
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nav-links li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #f1c40f;
+    transition: 0.3s;
+  }
+
+  .nav-links li a:hover {
+    color: #f1c40f;
+  }
+
+  .nav-links li a:hover::after {
+    width: 100%;
+  }
+
+
+  .loginbtn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #f1c40f;
+    color: #2c3e50;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+  }
+
+  .loginbtn:hover {
+    background: #fff;
+    color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+  }
+
+
+  .menu-icon {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    cursor: pointer;
+
+  }
+
+
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(44, 62, 80, 0.95);
+      flex-direction: column;
+      width: 240px;
+      padding: 25px 20px;
+      border-radius: 0 0 12px 12px;
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .nav-links.show {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-links li {
+      margin: 12px 0;
+    }
+
+    .menu-icon {
+      display: block;
+    }
+  }
+
+  .free-trial {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f7fbff 0%, #eef6ff 100%);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    color: #0f1720;
+  }
+
+  .ft-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 36px;
+    align-items: center;
+  }
+
+
+  .ft-visual img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(12, 18, 25, 0.08);
+    display: block;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #0369a1;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    font-size: 0.78rem;
+  }
+
+  .ft-content h2 {
+    font-size: 1.75rem;
+    margin: 0 0 10px 0;
+    line-height: 1.15;
+  }
+
+  .lead {
+    margin: 0 0 16px 0;
+    color: #334155;
+  }
+
+  .benefits {
+    display: flex;
+    gap: 10px 18px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex-wrap: wrap;
+    color: #0f1720;
+    font-weight: 600;
+  }
+
+  .benefits li {
+    background: rgba(3, 105, 161, 0.08);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+  }
+
+
+  .trial-form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(15, 23, 36, 0.06);
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .form-row label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #334155;
+  }
+
+  .form-row input {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #e6eef6;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .form-row input:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.12);
+  }
+
+
+  .form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 6px;
+  }
+
+  button.cta {
+    background: linear-gradient(90deg, #0369a1, #0ea5a8);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  button.cta:focus {
+    outline: 3px solid rgba(3, 105, 161, 0.18);
+  }
+
+  button.ghost {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .ghost:hover {
+    background: linear-gradient(90deg, #0369a1, #0ea5a8);
+  }
+
+
+  .small {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 10px;
+  }
+
+  .form-message {
+    margin-top: 12px;
+    font-weight: 600;
+    color: #065f46;
+  }
+
+
+  @media (max-width: 980px) {
+    .ft-container {
+      grid-template-columns: 1fr;
+    }
+
+    .ft-visual {
+      order: 2;
+    }
+
+    .ft-content {
+      order: 1;
+    }
+
+    .ft-content h2 {
+      font-size: 1.4rem;
+    }
+  }
+</style>
+
+<body>
+
+  <!-- header section -->
+  <header class="header">
+    <nav>
+      <div class="logo">
+        <a href=""><img src="./image/logo-removebg-preview.png" alt="">
+      </div></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./error.html">About</a></li>
+        <li><a href="./error.html">Service</a></li>
+        <li><a href="./error.html">FAQs</a></li>
+        <li><a href="./error.html">Blog</a></li>
+        <li><a href="./error.html">Contact</a></li>
+        <a href="./login.html"><button class="loginbtn">Login</button></a>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section class="free-trial" aria-labelledby="ft-heading">
+    <div class="ft-container">
+
+      <div class="ft-visual" role="img" aria-hidden="true">
+        <img src="./image/arts.png" alt="Illustration: HTML & CSS learning" />
+      </div>
+
+
+      <div class="ft-content">
+        <p class="eyebrow">Try risk-free</p>
+        <h2 id="ft-heading">Start your 7-day free trial — HTML & CSS course</h2>
+        <p class="lead">Full access to lessons, projects, and community. Cancel anytime during the trial.</p>
+
+        <ul class="benefits" aria-hidden="false">
+          <li>Interactive projects & live previews</li>
+          <li>Downloadable course resources</li>
+          <li>Certificate on completion</li>
+        </ul>
+
+        <form id="trial-form" class="trial-form" novalidate>
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="cta" aria-label="Start free trial">Start free trial — 7 days free</button>
+            <a href="./course.html"><button type="button" id="learn-more" class="ghost">View course details</button></a>
+          </div>
+
+          <p class="small">No credit card required • Access starts immediately</p>
+
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

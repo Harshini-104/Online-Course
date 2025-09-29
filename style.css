@@ -58,20 +58,6 @@
   background: rgba(255,255,255,0.4);
 }
 
-/* Optional: dark mode styles using CSS variables */
-body {
-  --bg-color: #f5f7fa;
-  --text-color: #222;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
-
-body.dark-mode {
-  --bg-color: #1c1c1c;
-  --text-color: #e0e0e0;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
 
 /*Section Header */
 
@@ -655,6 +641,21 @@ color: #2c3e50;
   }
 }
 
+@media (max-Width: 426px) {
+  .overlay {
+    font-size: 13px;
+  }
+}
+
+@media (max-Width: 375px) {
+  .overlay {
+    font-size: 11px;
+  }
+}
+
+
+
+
 /* Section latest course */
 .latest {
   padding: 60px 20px;
@@ -896,7 +897,7 @@ color: #2c3e50;
 /* section monitor */
 
 .monitorbody {
-    background: linear-gradient(200deg, rgb(237, 246, 143), #f197e5);
+  background: linear-gradient(200deg, rgb(237, 246, 143), #f197e5);
 
 }
 
@@ -1036,9 +1037,21 @@ color: #2c3e50;
   }
 }
 
+@media (max-width: 375px) {
+  .live h1 {
+    font-size: 20px;
+  }
+
+  .imgcontainer img {
+    height: 100%;
+  }
+
+  
+}
+
 /* section reviews */
 
-  .reviews {
+.reviews {
   padding: 60px 40px;
   background: #f9fafc;
   text-align: center;
@@ -1252,6 +1265,7 @@ color: #2c3e50;
   color: #009688;
   font-size: 1.1rem;
 }
+
 
 
 .newsletter-form {

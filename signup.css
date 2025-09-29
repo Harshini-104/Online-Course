@@ -1,8 +1,11 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
 }
+
+
 
 /*Section Header */
 
@@ -131,108 +134,141 @@ nav {
   }
 }
 
+/* section signup */
 
-/* General Styling */
 
-
-.advantages {
-  padding: 60px 10%;
-}
-
-.container {
+.signup {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  background: linear-gradient(135deg, #0a0f25, #1c2541);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Left Section */
-.left {
-  flex: 1.5;
-  padding: 40px;
-}
-
-.left .small-text {
-  font-size: 0.9rem;
-  color: #a0aec0;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.left h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-.stats {
-  display: flex;
-  gap: 25px;
-}
-
-.stat-box {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.stat-box i {
-  font-size: 2rem;
-  color: #38bdf8;
-  margin-bottom: 10px;
-}
-
-.stat-box .label {
-  font-size: 0.9rem;
-  color: #cbd5e1;
-}
-
-.stat-box h3 {
-  font-size: 1.8rem;
-  margin-top: 5px;
-  color: #fff;
-}
-
-.stat-box:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-/* Right Section */
-.right {
-  flex: 1;
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+  background: linear-gradient(rgba(74,144,226,0.6), rgba(231,76,60,0.6));
+
+}
+
+
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(200deg,  #f197e5,rgb(80, 87, 226));
+
+  border-radius: 15px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
-  color: #fff;
 }
 
-.right h2 {
-  font-size: 1.8rem;
-  margin-bottom: 25px;
+.signup-box h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.explore-btn {
-  background: #fff;
-  color: #1e293b;
-  border: none;
-  padding: 12px 25px;
-  font-size: 1rem;
+.signup-box .subtitle {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.signup-box .subtitle a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-box .subtitle a:hover {
+  text-decoration: underline;
+}
+
+
+.input {
+  text-align: left;
+  margin-bottom: 18px;
+}
+
+.input label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.input input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 6px rgba(37, 117, 252, 0.3);
+}
+
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2575fc;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
+  margin-top: 5px;
   transition: 0.3s;
 }
 
-.explore-btn:hover {
-  background: #e2e8f0;
+.btn:hover {
+  background: #1a5edb;
+  transform: translateY(-2px);
+}
+
+
+.or {
+  margin: 20px 0;
+  color: black;
+  font-size: 15px;
+  position: relative;
+}
+
+.or p {
+  
+  padding: 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.media {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.media img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  padding: 6px;
+  background: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.media img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }

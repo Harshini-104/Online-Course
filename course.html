@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /*Section Header */
+
+    .header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 15px 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+
+    .logo img {
+        width: 140px;
+        height: auto;
+        filter: brightness(0) invert(1);
+
+    }
+
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .nav-links li a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+
+    .nav-links li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        left: 0;
+        bottom: -5px;
+        background: #f1c40f;
+        transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+        color: #f1c40f;
+    }
+
+    .nav-links li a:hover::after {
+        width: 100%;
+    }
+
+
+    .loginbtn {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 25px;
+        background: #f1c40f;
+        color: #2c3e50;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+    }
+
+    .loginbtn:hover {
+        background: #fff;
+        color: #3498db;
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+
+    .menu-icon {
+        display: none;
+        font-size: 26px;
+        color: #fff;
+        cursor: pointer;
+
+    }
+
+
+
+    @media (max-width: 768px) {
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(44, 62, 80, 0.95);
+            flex-direction: column;
+            width: 240px;
+            padding: 25px 20px;
+            border-radius: 0 0 12px 12px;
+            transform: translateY(-20px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .nav-links.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-links li {
+            margin: 12px 0;
+        }
+
+        .menu-icon {
+            display: block;
+        }
+    }
+
+    /* section course */
+
+    .courselist {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 150px 20px;
+        justify-items: center;
+
+    }
+
+    .course {
+        width: 100%;
+        max-width: 340px;
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+        font-family: "Segoe UI", Arial, sans-serif;
+        color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        padding-bottom: 16px;
+
+    }
+
+    .course:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+    }
+
+
+    .img img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        margin-bottom: 12px;
+
+    }
+
+
+    .coursebody {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+    }
+
+
+    .instructor {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .per img {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .name {
+        margin: 0;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .rating {
+        margin: 2px 0 0 0;
+        font-size: 14px;
+        color: #475569;
+
+    }
+
+    .small {
+        color: #94a3b8;
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0;
+        color: #0f172a;
+        line-height: 1.3;
+    }
+
+
+    .lists {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 14px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #334155;
+    }
+
+    .lists li {
+        background: #f1f5f9;
+        padding: 6px 10px;
+        border-radius: 8px;
+    }
+
+
+    .rate {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+
+    .price .price1 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #065f46;
+    }
+
+    .enroll {
+        text-decoration: none;
+        background: linear-gradient(90deg, #0369a1, #0ea5a8);
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        box-shadow: 0 6px 14px rgba(3, 105, 161, 0.18);
+        transition: back 0.25s ease, transform 0.2s ease;
+    }
+
+    .enroll:hover {
+        background: linear-gradient(90deg, #0284c7, #0ea5e9);
+        transform: translateY(-2px);
+    }
+
+
+    @media (max-width: 1024px) {
+        .courselist {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 700px) {
+        .courselist {
+            grid-template-columns: 1fr;
+            padding: 16px;
+        }
+
+        .course {
+            max-width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <!-- header section -->
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <a href=""><img src="./image/logo-removebg-preview.png" alt="">
+            </div></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./error.html">About</a></li>
+                <li><a href="./error.html">Service</a></li>
+                <li><a href="./error.html">FAQs</a></li>
+                <li><a href="./error.html">Blog</a></li>
+                <li><a href="./error.html">Contact</a></li>
+                <a href="./login.html"><button class="loginbtn">Login</button></a>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- section courses -->
+    <section class="courselist">
+        <div class="course">
+            <div class="img">
+                <img src="./image/english.jpg" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Kevin Martin</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.6</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">English grammer courses online with real certificates</h3>
+
+                <ul class="lists">
+                    <li><strong>128</strong>Lessons</li>
+                    <li><strong>2k</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.10K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="course">
+            <div class="img">
+                <img src="./image/react.jpg" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Sarah Albert</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.7</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">Complete React Front-end developer course</h3>
+
+                <ul class="lists">
+                    <li><strong>71</strong>Lessons</li>
+                    <li><strong>765</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.25K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="course">
+            <div class="img">
+                <img src="./image/UI.png" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Amaul Joey</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.5</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">Basic to Advance UX & UI Design and live Training Course</h3>
+
+                <ul class="lists">
+                    <li><strong>45</strong>Lessons</li>
+                    <li><strong>540</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.20K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="course">
+            <div class="img">
+                <img src="./image/business.png" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Ken Abraham</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.3</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">Online learning management system & learn dash course</h3>
+
+                <ul class="lists">
+                    <li><strong>84</strong>Lessons</li>
+                    <li><strong>387</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.27K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="course">
+            <div class="img">
+                <img src="./image/webdesign.png" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Daniyel Joe</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.6</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">Dynamic website development to make money from online</h3>
+
+                <ul class="lists">
+                    <li><strong>185</strong>Lessons</li>
+                    <li><strong>36K</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.45K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="course">
+            <div class="img">
+                <img src="./image/machine.jpg" alt="">
+            </div>
+
+            <div class="coursebody">
+                <div class="instructor">
+                    <div class="per"><img src="./image/per3.png" alt=""></div>
+                    <div class="instructor-content">
+                        <p class="name">Mary Ann</p>
+                        <p class="rating">★ 5.0 <span class="small">/4.4</span></p>
+                    </div>
+                </div>
+
+                <h3 class="title">WordPress and WooCommerce complete development.</h3>
+
+                <ul class="lists">
+                    <li><strong>78</strong>Lessons</li>
+                    <li><strong>123</strong>Students</li>
+                </ul>
+
+                <div class="rate">
+                    <div class="price">
+                        <span class="price1">Rs.10K</span>
+                    </div>
+                    <a href="./error.html" class="enroll">Enroll Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <img src="./image/logo-removebg-preview.png" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./service.html">Service</a></li>
+                <li><a href="./faq.html">FAQs</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <a href="./login.html"><button class="loginbtn">Login</button></a>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- section faq -->
+
+    <section class="question">
+        <div class="mostly">
+            <h2>Mostly Asked Questions</h2>
+            <p>We give the exact answers for the question that you have asked for.. </p>
+
+            <button class="question-btn">Your Questions</button>
+        </div>
+    </section>c
+    <section class="faq">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="faq-subtitle">Find answers to the most common questions about our online courses.</p>
+
+            <div class="faq-item">
+                <button class="faq-question">What is this course about?</button>
+                <div class="faq-answer">
+                    <p>This course is designed to help you master web development from basics to advanced level with
+                        practical projects.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Do I get a certificate?</button>
+                <div class="faq-answer">
+                    <p>Yes, after successfully completing the course and assignments, you will receive a verified
+                        certificate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How long do I have access?</button>
+                <div class="faq-answer">
+                    <p>You will have lifetime access to the course materials, including updates and additional content.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Can I learn at my own pace?</button>
+                <div class="faq-answer">
+                    <p>Yes! Our course is completely self-paced, so you can learn whenever it’s convenient for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section footer -->
+
+  <footer class="footer">
+    <div class="footcontainer">
+      <div class="footting">
+        <img src="./image/logo-removebg-preview.png" alt="">
+        <p>Learning is a celebration We provide courses for your future achievements
+          And we also Provide world class course to gain Knowledge.
+        </p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footlink">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footercol">
+        <h4>More</h4>
+        <ul>
+          <li><a href="#">Live Workshop</a></li>
+          <li><a href="#">Admission</a></li>
+          <li><a href="#">Request A Demo</a></li>
+          <li><a href="#">Media Relations</a></li>
+          <li><a href="#">Students</a></li>
+        </ul>
+      </div>
+
+      <div class="footercol">
+        <h4>Contact Info</h4>
+        <p><i class="fa fa-phone"></i> 9968125386</p>
+        <p><i class="fa fa-envelope"></i> stackly.com</p>
+
+        <h4>Download Stackly App</h4>
+        <div class="applinks">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+            alt="">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="">
+        </div>
+      </div>
+
+      <div class="footerbottom">
+        <p>Copyright 2025. All Rights Reserved by <span>Stackly</span></p>
+      </div>
+  </footer>
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        const questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach((q) => {
+            q.addEventListener("click", () => {
+                q.classList.toggle("active");
+
+                let answer = q.nextElementSibling;
+                if (q.classList.contains("active")) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
