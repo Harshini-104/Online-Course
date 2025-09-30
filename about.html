@@ -1,60 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
-    <link rel="stylesheet" href="./about.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
+  <link rel="stylesheet" href="./about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
     integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css"
     href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-  
+
   <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <!-- header section -->
-  <header class="header">
-    <nav>
-      <div class="logo">
-        <img src="./image/logo-removebg-preview.png" alt="">
-      </div>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-        <li><a href="./service.html">Service</a></li>
-        <li><a href="./faq.html">FAQs</a></li>
-        <li><a href="./blog.html">Blog</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <a href="./login.html"><button class="loginbtn">Login</button></a>
-      </ul>
-      <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
-      </div>
-    </nav>
-  </header>
+<header class="header">
+  <nav>
+    <div class="logo">
+      <img src="./image/logo-removebg-preview.png" alt="">
+    </div>
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="./service.html">Service</a></li>
+      <li><a href="./faq.html">FAQs</a></li>
+      <li><a href="./blog.html">Blog</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <a href="./login.html"><button class="loginbtn">Login</button></a>
+    </ul>
+    <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+    </div>
+  </nav>
+</header>
 
-  <section class="advantages">
+<!-- section main -->
+<section class="main">
+  <div class="main-content">
+    <h1>About Us</h1>
+    <h4><a href="./index.html">🏠 Home </a><span>| About </span></h4>
+  </div>
+</section>
+
+<!-- section features -->
+
+<section class="features">
+  <div class="feature-container">
+    <h2 class="section-title">Incredible & Unique Features</h2>
+    <p class="section-subtitle">
+      Discover what makes our online courses stand out from the rest.
+    </p>
+
+    <div class="feature-cards">
+      <div class="feature-card">
+        <i class="fa-solid fa-chalkboard-teacher"></i>
+        <h3>Expert Instructors</h3>
+        <p>Learn from industry experts who bring real-world experience.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Flexible Schedule</h3>
+        <p>Access courses anytime, anywhere, and learn at your own pace.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-certificate"></i>
+        <h3>Certifications</h3>
+        <p>Earn globally recognized certificates after completing each course.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>24/7 Support</h3>
+        <p>Get help from our dedicated support team whenever you need it.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-tag"></i>
+        <h3>Affordable Pricing</h3>
+        <p>Quality eduction at budget-friendly rates with multiple payment options.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-universal-access"></i>
+        <h3>Community Access</h3>
+        <p>Connect with other learners, share ideas, and grow together.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-book"></i>
+        <h3>Progress Access</h3>
+        <p>Monitor your learning progress and achievements easily.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-brands fa-slack"></i>
+        <h3>Interactive Content</h3>
+        <p>Engaging videos, quizzes, and hands-on projects for better learning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- section advantages -->
+
+<section class="advantages">
+  <div class="heading">
+    <h1></h1>
+  </div>
   <div class="container">
-    <!-- Left Section -->
     <div class="left">
-      <p class="small-text">EDUCATION FOR EVERYONE</p>
+      <p class="small-text">WE PROVIDE ONLINE COURSE FOR EVERYONE</p>
       <h2>Advantages of our program</h2>
 
       <div class="stats">
@@ -79,16 +147,63 @@
     <!-- Right Section -->
     <div class="right">
       <h2>The worlds best <br> online education institute</h2>
-      <button class="explore-btn">Explore More</button>
+      <a href="./course.html"><button class="explore-btn">Explore Course</button></a>
+  </div>
+</section>
+
+
+<!-- section online course -->
+<section class="promo">
+  <div class="promo-inner container">
+    <div class="promo-text">
+      <h1 class="promo-title">The best online<br>learning resource<br>center</h1>
+      <p class="promo-sub">
+        There are many variations of passages of Lorem Ipsum available, but the majority
+        have suffered alteration in some form, by injected humour.
+      </p>
+
+      <div class="promo-badges">
+        <div class="badge">
+          <div class="badge-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+          <div class="badge-text">
+            <strong>Best Instructor</strong>
+            <span>Best Programs</span>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div class="badge-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="badge-text">
+            <strong>100% ISO Certified</strong>
+            <span>Guaranteed</span>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div class="badge-icon"><i class="fa-regular fa-headphones"></i></div>
+          <div class="badge-text">
+            <strong>Continuous Support</strong>
+            <span>We're here from start to finish</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="promo-media">
+      <img src="image/arts.png" alt="Online learning illustration" class="promo-image">
+      <p class="promo-media-caption">Knowledge For Life — We're here to help you from start to finish.</p>
     </div>
   </div>
 </section>
 
-<!-- FontAwesome CDN for icons -->
-<script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+
+
+
+
+
 <body>
-    
-    <script>
+
+  <script>
     function toggleMenu() {
       document.querySelector(".nav-links").classList.toggle("show");
     }
@@ -102,7 +217,7 @@
       once: false,
       mirror: true,
     });
-  </script> 
+  </script>
 </body>
-</html>
 
+</html>
