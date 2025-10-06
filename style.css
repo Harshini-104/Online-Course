@@ -195,7 +195,6 @@ nav {
   min-height: 100vh;
   padding: 40px 20px;
   text-align: center;
-  /* background: linear-gradient(135deg, #0f172a, #1e293b); */
   background: linear-gradient(135deg, rgba(2, 25, 79, 0.8), rgba(0, 8, 19, 0.8)),
               url("./image/hero.jpg") no-repeat center center/cover;
   color: #fff;

@@ -165,7 +165,7 @@ nav {
 }
 
 .main-content h1 {
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 700;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -314,6 +314,103 @@ nav {
 }
 
 
+.admission {
+  background: linear-gradient(135deg, #0a0f25, #1c2541);
+  color: #fff;
+  text-align: center;
+  padding: 100px 10%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.admission h2 {
+  font-size: 42px;
+  color: #00b4d8;
+  margin-bottom: 10px;
+}
+
+.admission .subtitle {
+  font-size: 18px;
+  color: #ccc;
+  margin-bottom: 60px;
+}
+
+
+.admission-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+
+.admission-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 30px 20px;
+  transition: 0.3s;
+}
+
+.admission-box:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px);
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+  background: #00b4d8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.icon i {
+  font-size: 32px;
+  color: #fff;
+}
+
+.admission-box h3 {
+  font-size: 20px;
+  color: #ffd60a;
+  margin-bottom: 12px;
+}
+
+.admission-box p {
+  font-size: 15px;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.apply-btn {
+  background: #00b4d8;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #0077b6;
+}
+
+
+@media (max-width: 992px) {
+  .admission-steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admission-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 /* section features */
 
 .features {
@@ -358,11 +455,12 @@ nav {
   color: white;
 }
 
-.feature-card i {
-  font-size: 40px; 
-  color: #3b82f6;
+.feature-card img {
+  width: 50px;
   margin-bottom: 20px;
 }
+
+
 
 
 .feature-card h3 {
