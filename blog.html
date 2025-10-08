@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog</title>
+  <link rel="stylesheet" href="./blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- header section -->
+  <header class="header">
+    <nav>
+      <div class="logo">
+        <img src="./image/logo-removebg-preview.png" alt="">
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./service.html">Service</a></li>
+        <li><a href="./faq.html">FAQs</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <a href="./login.html"><button class="loginbtn">Login</button></a>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- section main -->
+  <section class="main">
+    <div class="maincontent">
+      <h1>Blog</h1>
+      <h4><a href="./index.html">🏠 Home </a><span>| Blog </span></h4>
+    </div>
+  </section>
+
+
+  <!-- section blog -->
+
+  <section class="content">
+    <div class="container">
+      <div class="main-content">
+        <div class="img">
+          <img src="./image/UI.png" alt="Class">
+
+          <div class="date">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p>March 16, 2024</p>
+
+            <i class="fa-solid fa-circle-user"></i>
+            <p>Ann Marry</p>
+          </div>
+
+          <div class="para">
+            <p>
+              Give lady of they such they sure it. Me contained explained my education.
+              Vulgar as hearts by garret. Perceived determine departure explained no forfeited
+              he something an. Contrasted dissimilar get joy you instrument out reasonably.
+              Again keeps at no meant stuff. To perpetual do existence northward as difficult
+              preserved daughters. Continued at up to zealously necessary breakfast. Surrounded
+              sir motionless she end literature. Gay direction neglected but supported yet her.
+            </p>
+          </div>
+
+
+          <div class="comment-box">
+            <p>
+              Celebrated share of first to worse. Weddings and any opinions suitable smallest nay.
+              Houses or months settle remove ladies appear. Engrossed suffering supposing he recommend
+              do eagerness.
+            </p>
+          </div>
+
+
+          <div class="thumb-box">
+            <img src="./image/per3.png" alt="thumb image">
+            <h5>Md Sohag</h5>
+            <p>
+              Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit.
+              Vesti at bulum nec at odio aea the dumm ipsumm ipsum that dolocons rsus mal suada
+              and fadolorit to the consectetur elit. All the Lorem Ipsum generators on the Internet tend.
+            </p>
+
+          </div>
+
+          <div class="thumb-box">
+            <img src="./image/per3.png" alt="thumb image">
+            <h5>John</h5>
+            <p>
+              Grursus mal suada faci lisis Lorem ipsum dolarorit more ametion consectetur elit.
+              Vesti at bulum nec at odio aea the dumm ipsumm ipsum that dolocons rsus mal suada
+              and fadolorit to the consectetur elit. All the Lorem Ipsum generators on the Internet tend.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="sidebar">
+        <div class="sidebar-box search-section">
+          <h3>Search</h3>
+          <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+
+        <div class="sidebar-box recent-section">
+          <h3>Recent Posts</h3>
+
+          <div class="post">
+            <img src="./image/team3.png" alt="Recent Post 1">
+            <div class="post-info">
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> March 10, 2024</p>
+              <p class="text">Learning with creativity is the key to success.</p>
+            </div>
+          </div>
+
+          <div class="post">
+            <img src="./image/team4.png" alt="Recent Post 2">
+            <div class="post-info">
+              <p class="date"><i class="fa-solid fa-calendar-days"></i> March 05, 2024</p>
+              <p class="text">Education is not just books; it's imagination.</p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="sidebar-box archive-section">
+          <h3>Archive</h3>
+          <ul>
+            <li>
+              <span class="course-name">Web Development</span>
+              <span class="course-count">25</span>
+            </li>
+            <li>
+              <span class="course-name">Graphic Design</span>
+              <span class="course-count">15</span>
+            </li>
+            <li>
+              <span class="course-name">Digital Marketing</span>
+              <span class="course-count">16</span>
+            </li>
+          </ul>
+        </div>
+
+
+
+        <div class="sidebar-box gallery-section">
+          <h3>Gallery</h3>
+          <div class="gallery">
+            <img src="./image/digital.png" alt="Gallery 1">
+            <img src="./image/business.png" alt="Gallery 2">
+            <img src="./image/UI.png" alt="Gallery 3">
+            <img src="./image/python.png" alt="Gallery 4">
+          </div>
+        </div>
+
+
+        <div class="sidebar-box follow-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="./error.html"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-instagram"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section footer -->
+
+  <footer class="footer">
+    <div class="footcontainer">
+      <div class="footting">
+        <img src="./image/logo-removebg-preview.png" alt="company logo">
+        <p>Learning is a celebration We provide courses for your future achievements
+          And we also Provide world class course to gain Knowledge.
+        </p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footlink">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Team</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footercol">
+        <h4>More</h4>
+        <ul>
+          <li><a href="#">Live Workshop</a></li>
+          <li><a href="#">Admission</a></li>
+          <li><a href="#">Request A Demo</a></li>
+          <li><a href="#">Media Relations</a></li>
+          <li><a href="#">Students</a></li>
+        </ul>
+      </div>
+
+      <div class="footercol">
+        <h4>Contact Info</h4>
+        <p><i class="fa fa-phone"></i> 9968125386</p>
+        <p><i class="fa fa-envelope"></i> stackly@gmail.com</p>
+        <p><i class="fa-solid fa-location-dot"></i><a href=""></a>Gandhi Nagar, Tamil Nadu</p>
+
+        <h4>Download Stackly App</h4>
+        <div class="applinks">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="">
+          <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="">
+        </div>
+      </div>
+
+      <div class="footerbottom">
+        <p>Copyright 2025. All Rights Reserved by <span>Stackly</span></p>
+      </div>
+  </footer>
+
+
+
+
+
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("show");
+    }
+  </script>
+
+  <script>
+    // $(document).on('ready', function () {
+    // initialization of aos
+    AOS.init({
+      duration: 650,
+      once: false,
+      mirror: true,
+    });
+  </script>
+
+</body>
+
+</html>
