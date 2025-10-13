@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="faq.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="contact2.css">
+    <link rel="stylesheet" href="./contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,22 +25,22 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-
 <body>
 
     <!-- header section -->
     <header class="header">
         <nav>
             <div class="logo">
-                <img src="./image/logo-removebg-preview.png" alt="">
+                <a href=""><img src="./image/logo-removebg-preview.png" alt="company logo">
+            </div></a>
             </div>
             <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="./home2.html">Home</a></li>
                 <li><a href="./about.html">About</a></li>
                 <li><a href="./service.html">Service</a></li>
                 <li><a href="./faq.html">FAQs</a></li>
-                <li><a href="./blog.html">Blog</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./blog2.html">Blog</a></li>
+                <li><a href="./contact2.html">Contact</a></li>
                 <a href="./login.html"><button class="loginbtn">Login</button></a>
             </ul>
             <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
@@ -48,17 +49,58 @@
     </header>
 
     <!-- section main -->
-    <section class="main">
-        <div class="main-content">
-            <h1>FAQ</h1>
-            <h4><a href="./index.html">🏠 Home </a><span>| FAQs </span></h4>
+
+    <section class="contact-hero">
+        <div class="contact-container">
+            <div class="hero-content">
+                <h1>Get in Touch With Us</h1>
+                <p>Have questions about our online courses or need assistance?
+                    We're here to help you every step of the way.</p>
+
+                <div class="hero-buttons">
+                    <a href="./contact.html#contact" class="btn-primary">Contact Support</a>
+                    <a href="./faq.html" class="btn-secondary">Visit FAQ</a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="./image/help-desk.png" alt="Contact Support">
+            </div>
         </div>
     </section>
 
-    <!-- section faq -->
+<!-- section contact -->
+    <section class="contact">
 
+        <div class="contact-intro">
+            <h2>Why Contact Us?</h2>
+            <p>We're here to help you learn, teach, and grow. Whether you're a student, instructor, or partner — our
+                team is ready to assist you.</p>
+            <div class="introgrid">
+                <div class="introbox">
+                    <img src="./image/24-hours-support.png" alt="Support">
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock guidance for your learning journey.</p>
+                </div>
+                <div class="introbox">
+                    <img src="./image/online-learning.png" alt="Instructor Help">
+                    <h3>Instructor Help</h3>
+                    <p>Dedicated mentor assistance for your course needs.</p>
+                </div>
+                <div class="introbox">
+                    <img src="./image/virtual-team.png" alt="Collaboration">
+                    <h3>Collaborate</h3>
+                    <p>Partner with us for workshops and online events.</p>
+                </div>
+            </div>
+        </div>
 
-    <section class="faq">
+    </section>
+
+    
+<!-- section faq -->
+
+     <section class="faq">
         <div class="faq-container">
             <h2>Frequently Asked Questions</h2>
             <p class="faq-subtitle">Find answers to the most common questions about our online courses.</p>
@@ -96,79 +138,8 @@
         </div>
     </section>
 
+    
 
-    <section class="faq-alt">
-  <div class="container">
-    <div class="faq-wrapper">
-
-      <!-- Left Column -->
-      <div class="faq-left">
-        <h2>Need Help?</h2>
-        <p>We're here to assist you every step of the way. Explore common questions or reach out directly for personalized guidance about your online courses.</p>
-        <a href="#ask" class="ask-btn">Ask Your Question</a>
-        <img src="https://cdn-icons-png.flaticon.com/512/3649/3649463.png" alt="FAQ Illustration">
-      </div>
-
-      <!-- Right Column -->
-      <div class="faq-right">
-
-        <div class="faq-card">
-          <i class="fa-solid fa-book-open"></i>
-          <div>
-            <h3>What types of courses are available?</h3>
-            <p>We offer a wide range of courses including technology, design, business, and language learning, all taught by certified experts.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <i class="fa-solid fa-clock"></i>
-          <div>
-            <h3>Can I learn at my own pace?</h3>
-            <p>Yes! You can watch lessons anytime and progress through the course at a pace that suits your schedule.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <i class="fa-solid fa-comments"></i>
-          <div>
-            <h3>Is mentorship available?</h3>
-            <p>Every learner gets access to mentors for guidance, career advice, and progress tracking throughout the course.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <i class="fa-solid fa-money-bill-wave"></i>
-          <div>
-            <h3>Are there any payment plans?</h3>
-            <p>Yes, flexible payment options are available to make learning accessible for everyone.</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- section ask question -->
-
-    <section class="ask-question" id="ask">
-  <div class="container">
-    <h2>Ask Your Question</h2>
-    <p>Didn't find what you were looking for? We're happy to help!  
-      Share your question below, and our support team will get back to you soon.</p>
-
-    <form class="question-form" action="#" method="post">
-      <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      <textarea name="question" rows="5" placeholder="Type your question here..." required></textarea>
-      <a href="./error.html"><button type="submit" class="submit-btn">Submit Question</button></a>
-    </form>
-  </div>
-</section>
 
 
     <!-- section footer -->
@@ -176,7 +147,7 @@
     <footer class="footer">
         <div class="footcontainer">
             <div class="footting">
-                <a href=""><img src="./image/logo-removebg-preview.png" alt="company logo">
+                <img src="./image/logo-removebg-preview.png" alt="company logo">
                 <p>Learning is a celebration We provide courses for your future achievements
                     And we also Provide world class course to gain Knowledge.
                 </p>
@@ -204,16 +175,17 @@
                 <ul>
                     <li><a href="./about.html#features">Features</a></li>
                     <li><a href="./about.html#admission">Admission</a></li>
-                    <li><a href="service.html#demo">Request A Demo</a></li>
-                    <li><a href="service.html#work">How we Work</a></li>
-                    <li><a href="service.html#membership">Membership Plan</a></li>
+                    <li><a href="./service.html#demo">Request A Demo</a></li>
+                    <li><a href="./service.html#work">How we Work</a></li>
+                    <li><a href="./service.html#membership">Membership Plan</a></li>
                 </ul>
             </div>
 
             <div class="footercol">
                 <h4>Contact Info</h4>
                 <p><i class="fa fa-phone"></i> 9968125386</p>
-                <p><i class="fa fa-envelope"></i> stackly.com</p>
+                <p><i class="fa fa-envelope"></i> stackly@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i><a href=""></a>Gandhi Nagar, Tamil Nadu</p>
 
                 <h4>Download Stackly App</h4>
                 <div class="applinks">
@@ -236,21 +208,13 @@
     </script>
 
     <script>
-        const questions = document.querySelectorAll(".faq-question");
-
-        questions.forEach((q) => {
-            q.addEventListener("click", () => {
-                q.classList.toggle("active");
-
-                let answer = q.nextElementSibling;
-                if (q.classList.contains("active")) {
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                } else {
-                    answer.style.maxHeight = null;
-                }
-            });
+        // $(document).on('ready', function () {
+        // initialization of aos
+        AOS.init({
+            duration: 650,
+            once: false,
+            mirror: true,
         });
-
     </script>
 
 </body>
