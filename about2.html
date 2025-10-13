@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="./about2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- header section -->
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <a href=""><img src="./image/logo-removebg-preview.png" alt="company logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="./home2.html">Home</a></li>
+                <li><a href="./about2.html">About</a></li>
+                <li><a href="./service.html">Service</a></li>
+                <li><a href="./faq.html">FAQs</a></li>
+                <li><a href="./blog2.html">Blog</a></li>
+                <li><a href="./contact2.html">Contact</a></li>
+                <a href="./login.html"><button class="loginbtn">Login</button></a>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section main -->
+    <section class="about">
+        <div class="overlay"></div>
+        <div class="maincontent">
+            <h1>About Our Learning Platform</h1>
+            <p>Empowering learners across the globe with quality online education. Our platform is built to help you
+                grow, learn, and achieve your dreams with expert instructors and hands-on experience.</p>
+            <a href="./course.html" class="hero-btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- section weekly update -->
+
+    <section class="weekly-updates">
+        <div class="updates-container">
+            <h2 class="updates-title">WEEKLY UPDATES</h2>
+            <p class="updates-subtitle">Latest Insights & Growth in Online Learning</p>
+
+            <div class="updates-grid">
+
+                <div class="update-card">
+                    <img src="./image/update1.jpg" alt="Update 1">
+                    <div class="update-content">
+                        <h3>Update 1: Rising Enrollment in Coding Courses</h3>
+                        <div class="update-meta">
+                            <span class="date">05 Aug, 2022</span>
+                            <span class="author">Rodja Hartmann</span>
+                        </div>
+                        <p>Thousands of learners have joined our latest front-end and full-stack programs this week.
+                            Interactive projects and mentorship from experts have boosted course completion rates and
+                            increased learner satisfaction globally.</p>
+                    </div>
+                </div>
+
+                <div class="update-card">
+                    <img src="./image/update2.png" alt="Update 2">
+                    <div class="update-content">
+                        <h3>Update 2: New Instructors Join Our Platform</h3>
+                        <div class="update-meta">
+                            <span class="date">08 Aug, 2025</span>
+                            <span class="author">Rodja Hartmann</span>
+                        </div>
+                        <p>We are excited to welcome a group of experienced instructors specializing in AI, UX Design,
+                            and Digital Marketing. Their real-world experience will bring more depth and insight to
+                            upcoming online sessions.</p>
+                    </div>
+                </div>
+
+                <div class="update-card">
+                    <img src="./image/update3.jpeg" alt="Update 3">
+                    <div class="update-content">
+                        <h3>Update 3: Launch of New Certification Programs</h3>
+                        <div class="update-meta">
+                            <span class="date">13 Aug, 2025</span>
+                            <span class="author">Rodja Hartmann</span>
+                        </div>
+                        <p>Our platform now offers globally recognized certification courses in Cloud Computing, Data
+                            Science, and Cybersecurity — helping students and professionals upgrade their skills for the
+                            digital era.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- section count -->
+
+    <section class="section" id="stats">
+        <div class="overlay"></div>
+        <div class="boxcontainer">
+            <div class="boxx">
+                <h2 class="counter" data-target="750">0</h2>
+                <p>Successful Courses</p>
+            </div>
+            <div class="boxx">
+                <h2 class="counter" data-target="350">0</h2>
+                <p>Online Events</p>
+            </div>
+            <div class="boxx">
+                <h2 class="counter" data-target="150">0</h2>
+                <p>Expert Instructors</p>
+            </div>
+            <div class="boxx">
+                <h2 class="counter" data-target="125">0</h2>
+                <p>Happy Learners</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section company -->
+
+    <section class="about-company">
+        <div class="about-container">
+
+            <!-- Left Side: Content -->
+            <div class="about-content">
+                <h5>ABOUT OUR PLATFORM</h5>
+                <h2>Connecting Learners and Empowering Knowledge</h2>
+                <h3><span class="highlight">10+</span> Years of Excellence in Online Education</h3>
+                <p>
+                    Our online learning platform connects thousands of students and professionals across the globe with
+                    top-notch instructors. We offer interactive video sessions, real-world projects, and expert
+                    mentorship
+                    to help learners gain practical skills in technology, business, and creativity. Our mission is to
+                    make
+                    education accessible, flexible, and career-oriented for everyone.
+                </p>
+                <ul class="about-points">
+                    <li>✔ 500+ Certified Online Courses</li>
+                    <li>✔ Global Community of 50,000+ Learners</li>
+                    <li>✔ Expert Instructors from Leading Industries</li>
+                    <li>✔ Career Support & Job Assistance</li>
+                </ul>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="about-image">
+                <img src="./image/arts.png" alt="Online Learning">
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section services -->
+
+    <section class="services">
+        <h3>OUR LATEST SERVICES</h3>
+        <h2>WHAT KIND OF SERVICES <br> <span>WE ARE OFFERING</span></h2>
+
+        <div class="service-container">
+            <div class="service-box">
+                <i class="fa-solid fa-cloud"></i>
+                <h4>Cloud Services</h4>
+                <p>Comprehensive cloud computing courses covering AWS, Azure, and Google Cloud with practical deployment
+                    projects and storage management.</p>
+                <a href="./read.html">READ MORE</a>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-code"></i>
+                <h4>UI Development</h4>
+                <p>Learn HTML, CSS, and JavaScript with responsive web design practices and real-world interface
+                    projects to master front-end development.</p>
+                <a href="#">READ MORE</a>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-bullhorn"></i>
+                <h4>Digital Marketing</h4>
+                <p>Master SEO, content strategy, and analytics to promote online courses effectively using modern
+                    marketing tools and techniques.</p>
+                <a href="#">READ MORE</a>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h4>Web Development</h4>
+                <p>Get hands-on with full-stack web development including MERN stack, backend APIs, databases, and
+                    hosting projects.</p>
+                <a href="#">READ MORE</a>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-gears"></i>
+                <h4>Software Services</h4>
+                <p>Professional software engineering guidance including version control, testing, agile practices, and
+                    deployment workflows.</p>
+                <a href="#">READ MORE</a>
+            </div>
+
+            <div class="service-box">
+                <i class="fa-solid fa-robot"></i>
+                <h4>Machine Learning</h4>
+                <p>Learn to build and deploy ML models using Python, TensorFlow, and Scikit-learn with real-world
+                    data-driven case studies.</p>
+                <a href="#">READ MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+    <!-- section footer -->
+
+    <footer class="footer">
+        <div class="footcontainer">
+            <div class="footting">
+                <img src="./image/logo-removebg-preview.png" alt="company logo">
+                <p>Learning is a celebration We provide courses for your future achievements
+                    And we also Provide world class course to gain Knowledge.
+                </p>
+                <div class="social">
+                    <a href="./error.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="./error.html"><i class="fab fa-x-twitter"></i></a>
+                    <a href="./error.html"><i class="fab fa-youtube"></i></a>
+                    <a href="./error.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footlink">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./course.html">Courses</a></li>
+                    <li><a href="./blog.html">Blogs</a></li>
+                    <li><a href="./about.html#team">Team</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footercol">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="./about.html#features">Features</a></li>
+                    <li><a href="./about.html#admission">Admission</a></li>
+                    <li><a href="./service.html#demo">Request A Demo</a></li>
+                    <li><a href="./service.html#work">How we Work</a></li>
+                    <li><a href="./service.html#membership">Membership Plan</a></li>
+                </ul>
+            </div>
+
+            <div class="footercol">
+                <h4>Contact Info</h4>
+                <p><i class="fa fa-phone"></i> 9968125386</p>
+                <p><i class="fa fa-envelope"></i> stackly@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i><a href=""></a>Gandhi Nagar, Tamil Nadu</p>
+
+                <h4>Download Stackly App</h4>
+                <div class="applinks">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="">
+                </div>
+            </div>
+
+            <div class="footerbottom">
+                <p>Copyright 2025. All Rights Reserved by <span>Stackly</span></p>
+            </div>
+    </footer>
+
+
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        let started = false; // Prevent running multiple times
+
+        function startCounting() {
+            const section = document.querySelector('#stats');
+            if (!started && isInViewport(section)) {
+                started = true;
+
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    let count = 0;
+                    const speed = 30; // smaller = faster
+
+                    const update = () => {
+                        if (count < target) {
+                            count += Math.ceil(target / 100);
+                            counter.textContent = count;
+                            setTimeout(update, speed);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+                    update();
+                });
+            }
+        }
+
+        function isInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        window.addEventListener('scroll', startCounting);
+
+    </script>
+
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        // $(document).on('ready', function () {
+        // initialization of aos
+        AOS.init({
+            duration: 650,
+            once: false,
+            mirror: true,
+        });
+    </script>
+
+</body>
+
+</html>
