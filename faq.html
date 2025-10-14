@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FAQ</title>
     <link rel="stylesheet" href="faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
@@ -50,7 +50,7 @@
     <!-- section main -->
     <section class="main">
         <div class="main-content">
-            <h1>FAQ</h1>
+            <h1 data-aos="zoom-in">FAQ</h1>
             <h4><a href="./index.html">🏠 Home </a><span>| FAQs </span></h4>
         </div>
     </section>
@@ -60,10 +60,10 @@
 
     <section class="faq">
         <div class="faq-container">
-            <h2>Frequently Asked Questions</h2>
-            <p class="faq-subtitle">Find answers to the most common questions about our online courses.</p>
+            <h2 data-aos="zoom-in">Frequently Asked Questions</h2>
+            <p data-aos="zoom-in" class="faq-subtitle">Find answers to the most common questions about our online courses.</p>
 
-            <div class="faq-item">
+            <div class="faq-item" data-aos="fade-up">
                 <button class="faq-question">What is this course about?</button>
                 <div class="faq-answer">
                     <p>This course is designed to help you master web development from basics to advanced level with
@@ -71,7 +71,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-aos="fade-up">
                 <button class="faq-question">Do I get a certificate?</button>
                 <div class="faq-answer">
                     <p>Yes, after successfully completing the course and assignments, you will receive a verified
@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-aos="fade-up">
                 <button class="faq-question">How long do I have access?</button>
                 <div class="faq-answer">
                     <p>You will have lifetime access to the course materials, including updates and additional content.
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="faq-item">
+            <div class="faq-item" data-aos="fade-up">
                 <button class="faq-question">Can I learn at my own pace?</button>
                 <div class="faq-answer">
                     <p>Yes! Our course is completely self-paced, so you can learn whenever it's convenient for you.</p>
@@ -103,16 +103,16 @@
 
       <!-- Left Column -->
       <div class="faq-left">
-        <h2>Need Help?</h2>
-        <p>We're here to assist you every step of the way. Explore common questions or reach out directly for personalized guidance about your online courses.</p>
-        <a href="#ask" class="ask-btn">Ask Your Question</a>
-        <img src="https://cdn-icons-png.flaticon.com/512/3649/3649463.png" alt="FAQ Illustration">
+        <h2 data-aos="zoom-in">Need Help?</h2>
+        <p data-aos="zoom-in">We're here to assist you every step of the way. Explore common questions or reach out directly for personalized guidance about your online courses.</p>
+        <a href="#ask" class="ask-btn" >Ask Your Question</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/3649/3649463.png" alt="FAQ Illustration" data-aos="flip-left">
       </div>
 
       <!-- Right Column -->
       <div class="faq-right">
 
-        <div class="faq-card">
+        <div class="faq-card" data-aos="zoom-in">
           <i class="fa-solid fa-book-open"></i>
           <div>
             <h3>What types of courses are available?</h3>
@@ -120,7 +120,7 @@
           </div>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card" data-aos="zoom-in">
           <i class="fa-solid fa-clock"></i>
           <div>
             <h3>Can I learn at my own pace?</h3>
@@ -128,7 +128,7 @@
           </div>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card" data-aos="zoom-in">
           <i class="fa-solid fa-comments"></i>
           <div>
             <h3>Is mentorship available?</h3>
@@ -136,7 +136,7 @@
           </div>
         </div>
 
-        <div class="faq-card">
+        <div class="faq-card" data-aos="zoom-in">
           <i class="fa-solid fa-money-bill-wave"></i>
           <div>
             <h3>Are there any payment plans?</h3>
@@ -155,16 +155,16 @@
 
     <section class="ask-question" id="ask">
   <div class="container">
-    <h2>Ask Your Question</h2>
-    <p>Didn't find what you were looking for? We're happy to help!  
+    <h2 data-aos="zoom-in">Ask Your Question</h2>
+    <p data-aos="zoom-in">Didn't find what you were looking for? We're happy to help!  
       Share your question below, and our support team will get back to you soon.</p>
 
     <form class="question-form" action="#" method="post">
       <div class="form-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="name" placeholder="Your Name" required data-aos="fade-up">
+        <input type="email" name="email" placeholder="Your Email" required data-aos="fade-up">
       </div>
-      <textarea name="question" rows="5" placeholder="Type your question here..." required></textarea>
+      <textarea name="question" rows="5" placeholder="Type your question here..." required data-aos="fade-up" ></textarea>
       <a href="./error.html"><button type="submit" class="submit-btn">Submit Question</button></a>
     </form>
   </div>
@@ -234,6 +234,16 @@
             document.querySelector(".nav-links").classList.toggle("show");
         }
     </script>
+
+    <script>
+    // $(document).on('ready', function () {
+    // initialization of aos
+    AOS.init({
+      duration: 650,
+      once: false,
+      mirror: true,
+    });
+  </script>
 
     <script>
         const questions = document.querySelectorAll(".faq-question");

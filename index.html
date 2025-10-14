@@ -40,7 +40,13 @@
       </div></a>
       </div>
       <ul class="nav-links">
-        <li><a href="./home2.html">Home</a></li>
+        <!-- <li><a href="./home2.html">Home</a></li> -->
+        <li class="dropdown" id="homeDropdownWrapper">
+          <a href="./index.html">Home <span id="homeLink">▼</span></a>
+          <ul class="dropdown-menu" id="homeDropdown">
+            <li><a href="./home2.html">Home2</a></li>
+          </ul>
+        </li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./service.html">Service</a></li>
         <li><a href="./faq.html">FAQs</a></li>
@@ -503,7 +509,7 @@
           <h3 class="card-title">Excellent Quality</h3>
         </div>
 
-        <p class="card-text" >
+        <p class="card-text">
           Learning through this platform has been an amazing journey. The lessons are well-structured and easy
           to follow. Every concept is explained clearly with practical examples. It has improved my confidence
           and helped me achieve goals faster than expected. Highly recommended.
@@ -740,15 +746,12 @@
         <li><i class="fa-solid fa-circle-check"></i> 10M student onboard with us</li>
       </ul>
 
-      
+
       <form class="newsletter-form">
-  <label for="newsletter-email" class="visually-hidden">Your Email</label>
-  <input id="newsletter-email" 
-         type="email" 
-         placeholder="Enter your email address" 
-         required />
-  <button type="submit" class="btn-subscribe">Subscribe</button>
-</form>
+        <label for="newsletter-email" class="visually-hidden">Your Email</label>
+        <input id="newsletter-email" type="email" placeholder="Enter your email address" required />
+        <button type="submit" class="btn-subscribe">Subscribe</button>
+      </form>
 
 
     </div>

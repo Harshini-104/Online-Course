@@ -151,13 +151,13 @@ nav {
 }
 
 .faq h2 {
-  font-size: 2.2rem;
+  font-size: 34px;
   color: #ffcc00;
   margin-bottom: 10px;
 }
 
 .faq-subtitle {
-  font-size: 1rem;
+  font-size: 16px;
   color: white;
   margin-bottom: 40px;
 }
@@ -179,7 +179,7 @@ nav {
   background: #fff;
   border: none;
   outline: none;
-  font-size: 1.05rem;
+  font-size: 16px;
   font-weight: 600;
   color: #333;
   cursor: pointer;
@@ -192,7 +192,7 @@ nav {
   content: "+";
   position: absolute;
   right: 20px;
-  font-size: 1.3rem;
+  font-size: 20px;
   transition: transform 0.3s;
 }
 
@@ -217,7 +217,7 @@ nav {
 
 .faq-answer p {
   padding: 15px 0;
-  font-size: 0.95rem;
+  font-size: 15px;
   color: #444;
   line-height: 1.6;
 }
@@ -270,7 +270,7 @@ nav {
 }
 
 .main-content h4 {
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 400;
   color: #ddd; 
 }
