@@ -133,6 +133,10 @@ nav {
 
 /* section read */
 
+.service-box {
+  padding-top: 80px;
+}
+
 .service-box.image-left {
   display: flex;
   gap: 25px;
@@ -150,7 +154,7 @@ nav {
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
-/* Image styling */
+
 .service-image {
   flex: 1;
 }
@@ -162,7 +166,7 @@ nav {
   height: auto;
 }
 
-/* Content styling */
+
 .service-content {
   flex: 2;
 }
@@ -187,7 +191,7 @@ nav {
   text-align: justify;
 }
 
-/* Responsive */
+
 @media (max-width: 992px) {
   .service-box.image-left {
     flex-direction: column;

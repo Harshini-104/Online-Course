@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Start Learning</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- header section -->
+  <header class="header">
+    <nav>
+      <div class="logo">
+        <a href=""><img src="./image/logo-removebg-preview.png" alt="company logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="./home2.html">Home</a></li>
+        <li><a href="./about2.html">About</a></li>
+        <li><a href="./service2.html">Service</a></li>
+        <li><a href="./blog2.html">Blog</a></li>
+        <li><a href="./contact2.html">Contact</a></li>
+        <a href="./login.html"><button class="loginbtn">Login</button></a>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+
+  <section class="starts">
+    <section class="start-learning" id="web">
+      <div class="container">
+        <h2>Start Learning Web Development</h2>
+        <div class="rating">
+          <span>★★★★★</span>
+        </div>
+        <p>
+          Our <strong>Web Development</strong> course helps you build modern, responsive websites and web applications.
+          Learn HTML, CSS, and JavaScript, progress to frameworks like React and Angular, and gain back-end skills with
+          Node.js and databases like MongoDB and MySQL.
+          Through hands-on projects, create interactive interfaces, integrate APIs, and optimize performance. By the
+          end,
+          you’ll have a portfolio of real-world web applications and the confidence to launch your career as a web
+          developer.
+        </p>
+        <a href="./error.html" class="btn">Enroll Now</a>
+      </div>
+    </section>
+
+    <section class="start-learning" id="data">
+      <div class="container">
+        <h2>Start Learning Data Science</h2>
+        <div class="rating">
+          <span>★★★★★</span>
+        </div>
+        <p>
+          Our <strong>Data Science</strong> course is designed to equip you with the skills to analyze, interpret, and
+          visualize data effectively.
+          Learn Python, R, SQL, and tools like Pandas, NumPy, and Matplotlib, while mastering data cleaning, analysis,
+          and
+          machine learning concepts.
+          Through real-world projects, build predictive models, perform statistical analysis, and create interactive
+          dashboards. By the end, you’ll have a portfolio of practical data science projects and the confidence to start
+          your career in this high-demand field.
+        </p>
+        <a href="./error.html" class="btn">Enroll Now</a>
+      </div>
+    </section>
+
+    <section class="start-learning" id="design">
+      <div class="container">
+        <h2>Start Learning UI/UX Design</h2>
+        <div class="rating">
+          <span>★★★★★</span>
+        </div>
+        <p>
+          Our <strong>UX/UI Design</strong> is the art and science of creating user-friendly digital experiences that are both visually appealing and highly functional. In this course, you’ll learn how to design intuitive interfaces, conduct user research, and create wireframes and prototypes that bring your ideas to life. Through hands-on projects and real-world examples, you’ll explore essential tools like Figma, Adobe XD, and Sketch. You’ll also gain a deep understanding of usability, accessibility, and responsive design principles.
+        </p>
+        <a href="./error.html" class="btn">Enroll Now</a>
+      </div>
+    </section>
+
+  </section>
+
+  <style>
+    /*Section Header */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #2c3e50, #3498db);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    .logo img {
+      width: 140px;
+      height: auto;
+      filter: brightness(0) invert(1);
+
+    }
+
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -5px;
+      background: #f1c40f;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #f1c40f;
+    }
+
+    .nav-links li a:hover::after {
+      width: 100%;
+    }
+
+
+    .loginbtn {
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      background: #f1c40f;
+      color: #2c3e50;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+    }
+
+    .loginbtn:hover {
+
+      color: #3498db;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+    }
+
+
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      color: #fff;
+      cursor: pointer;
+
+    }
+
+
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(44, 62, 80, 0.95);
+        flex-direction: column;
+        width: 240px;
+        padding: 25px 20px;
+        border-radius: 0 0 12px 12px;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+
+      .nav-links.show {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links li {
+        margin: 12px 0;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    .starts {
+      padding-top: 90px;
+      background: url("./image/pink.png") no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+
+    .start-learning {
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      padding-top: 250px;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      border-radius: 12px;
+      margin: 40px auto;
+      max-width: 900px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .start-learning h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .start-learning .rating {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    .start-learning p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .start-learning .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1rem;
+      color: #2575fc;
+      background: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .start-learning .btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("show");
+    }
+  </script>
+
+
+  <script>
+    // $(document).on('ready', function () {
+    // initialization of aos
+    AOS.init({
+      duration: 650,
+      once: false,
+      mirror: true,
+    });
+  </script>
+
+
+</body>
+
+</html>
