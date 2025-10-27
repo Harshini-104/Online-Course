@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash Board</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <div id="particles-js"></div>
+
+    <style>
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #001f3f, #0074D9);
+            z-index: -1;
+        }
+    </style>
+
+    <script>
+        particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
+    </script>
+
+    <!-- header section -->
+    <header class="header">
+        <nav>
+            <div class="logo">
+                <a href=""><img src="./image/logo-removebg-preview.png" alt="company logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./service.html">Service</a></li>
+                <li><a href="./faq.html">FAQs</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./dashboard.html">Dashboard</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+                <a href="./login.html"><button class="loginbtn">Login</button></a>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()"> <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="box blue" data-aos="flip-up">
+                <div class="icon">
+                    <img src="./image/completed course.png" alt="completed course">
+                </div>
+                <h3>Completed Courses</h3>
+                <p>150+</p>
+            </div>
+            <div class="box green" data-aos="flip-up">
+                <div class="icon">
+                    <img src="./image/growth.png" alt="">
+                </div>
+                <h3>Course in Progress</h3>
+                <p>20+</p>
+            </div>
+            <div class="box cyan" data-aos="flip-up">
+                <div class="icon">
+                    <img src="./image/certificate one.png" alt="certificate earned">
+                </div>
+                <h3>Certificate Earned</h3>
+                <p>25+</p>
+            </div>
+            <div class="box orange" data-aos="flip-up">
+                <div class="icon">
+                    <img src="./image/community.png" alt="">
+                </div>
+                <h3>Community Support</h3>
+                <p>15k+</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- section enroll -->
+    <section class="progress-section">
+        <div class="progress-container">
+
+            <!-- Left Side -->
+            <div class="progress-left">
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon green">🎓</div>
+                    <p>Total Enroll Courses</p>
+                    <div class="circle green-circle"><span>5</span></div>
+                </div>
+
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon blue">🎯</div>
+                    <p>Course Completed</p>
+                    <div class="circle blue-circle"><span>1</span></div>
+                </div>
+
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon red">⏳</div>
+                    <p>Hours Spent</p>
+                    <div class="circle red-circle"><span>112h</span></div>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="progress-right">
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon orange">📡</div>
+                    <p>Live Class Attended</p>
+                    <div class="circle orange-circle"><span>70%</span></div>
+                </div>
+
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon darkblue">❓</div>
+                    <p>Quiz Practised</p>
+                    <div class="circle darkblue-circle"><span>20/30</span></div>
+                </div>
+
+                <div class="progress-item" data-aos="fade-up">
+                    <div class="progress-icon gray">📘</div>
+                    <p>Assignment Done</p>
+                    <div class="circle gray-circle"><span>✔</span></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="performance-section">
+        <div class="performance-container" data-aos="fade-up">
+            <h2>Overall Performance</h2>
+
+            <div class="chart">
+                <div class="label" data-aos="fade-up">
+                    <span>Completed Courses</span>
+                    <span>150+</span>
+                </div>
+                <div class="bar" data-aos="fade-up">
+                    <div class="fill blue" style="width: 90%;"></div>
+                </div>
+
+                <div class="label" data-aos="fade-up">
+                    <span>Course in Progress</span>
+                    <span>20+</span>
+                </div>
+                <div class="bar" data-aos="fade-up">
+                    <div class="fill green" style="width: 60%;"></div>
+                </div>
+
+                <div class="label" data-aos="fade-up">
+                    <span>Certificates Earned</span>
+                    <span>25+</span>
+                </div>
+                <div class="bar" data-aos="fade-up">
+                    <div class="fill cyan" style="width: 70%;"></div>
+                </div>
+
+                <div class="label" data-aos="fade-up">
+                    <span>Community Support</span>
+                    <span>15k+</span>
+                </div>
+                <div class="bar" data-aos="fade-up">
+                    <div class="fill orange"  style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- section chart -->
+
+    <section class="chart-section" data-aos="fade-up">
+        <div class="chart-box">
+            <h3>Total Users (Online Course)</h3>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h3>User Distribution by Category</h3>
+            <canvas id="donutChart"></canvas>
+        </div>
+    </section>
+
+    <!-- section footer -->
+
+    <footer class="footer">
+        <div class="footcontainer">
+            <div class="footting">
+                <img src="./image/logo-removebg-preview.png" alt="company logo">
+                <p>Learning is a celebration We provide courses for your future achievements
+                    And we also Provide world class course to gain Knowledge.
+                </p>
+                <div class="social">
+                    <a href="./error.html"><i class="fab fa-facebook-f"></i></a>
+                    <a href="./error.html"><i class="fab fa-x-twitter"></i></a>
+                    <a href="./error.html"><i class="fab fa-youtube"></i></a>
+                    <a href="./error.html"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footlink">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./course.html">Courses</a></li>
+                    <li><a href="./blog.html">Blogs</a></li>
+                    <li><a href="./about.html#team">Team</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footercol">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="./about.html#features">Features</a></li>
+                    <li><a href="./about.html#admission">Admission</a></li>
+                    <li><a href="./service.html#demo">Request A Demo</a></li>
+                    <li><a href="./service.html#work">How we Work</a></li>
+                    <li><a href="./service.html#membership">Membership Plan</a></li>
+                </ul>
+            </div>
+
+            <div class="footercol">
+                <h4>Contact Info</h4>
+                <p><i class="fa fa-phone"></i> 9968125386</p>
+                <p><i class="fa fa-envelope"></i> stackly@gmail.com</p>
+                <p><i class="fa-solid fa-location-dot"></i><a href=""></a>Gandhi Nagar, Tamil Nadu</p>
+
+                <h4>Download Stackly App</h4>
+                <div class="applinks">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="">
+                </div>
+            </div>
+
+            <div class="footerbottom">
+                <p>Copyright 2025. All Rights Reserved by <span>Stackly</span></p>
+            </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Bar Chart
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        new Chart(barCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Total Users',
+                    data: [18000, 29000, 24000, 31000, 25000],
+                    backgroundColor: '#42a5f5',
+                    borderRadius: 8,
+                    hoverBackgroundColor: '#1e88e5'
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: { color: '#0d47a1', font: { size: 12 } }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: '#1565c0', stepSize: 5000 },
+                        grid: { color: 'rgba(21, 101, 192, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#1565c0' },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Donut Chart
+        const donutCtx = document.getElementById('donutChart').getContext('2d');
+        new Chart(donutCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['India', 'USA', 'UK', 'Other'],
+                datasets: [{
+                    label: 'Users',
+                    data: [55, 25, 10, 10],
+                    backgroundColor: ['#2196f3', '#64b5f6', '#90caf9', '#1976d2'],
+                    borderColor: '#fff',
+                    borderWidth: 3,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: '#0d47a1', font: { size: 13 } }
+                    },
+                },
+                cutout: '65%',
+            }
+        });
+    </script>
+
+    <script>
+        // $(document).on('ready', function () {
+        // initialization of aos
+        AOS.init({
+            duration: 650,
+            once: false,
+            mirror: true,
+        });
+    </script>
+
+
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
