@@ -593,13 +593,11 @@ nav {
   transform: scale(1.05);
 }
 
-/* Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .about-company {
     padding: 80px 6%;
-    background-attachment: fixed; /* keep fixed */
+    background-attachment: fixed;
   }
-
   .about-container {
     flex-direction: column;
     gap: 40px;
@@ -631,11 +629,11 @@ nav {
   }
 }
 
-/* Mobile (max-width: 480px) */
+
 @media (max-width: 480px) {
   .about-company {
     padding: 60px 20px;
-    background-attachment: fixed; /* remain fixed */
+    background-attachment: fixed; 
   }
 
   .about-container {
