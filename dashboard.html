@@ -4,44 +4,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dash Board</title>
-    <link rel="stylesheet" href="./dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Online Course Dashboard with Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
 
-    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+        /*Section Header */
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
-        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        .header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #041d35, #012034);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .logo img {
+            width: 140px;
+            height: auto;
+            filter: brightness(0) invert(1);
+
+        }
+
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: -5px;
+            background: #f1c40f;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #f1c40f;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+
+        .loginbtn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #f1c40f;
+            color: #2c3e50;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+        }
+
+        .loginbtn:hover {
+
+            color: #3498db;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            color: #fff;
+            cursor: pointer;
+
+        }
+
+
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: rgba(44, 62, 80, 0.95);
+                flex-direction: column;
+                width: 240px;
+                padding: 25px 20px;
+                border-radius: 0 0 12px 12px;
+                transform: translateY(-20px);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.4s ease;
+            }
+
+            .nav-links.show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links li {
+                margin: 12px 0;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 90px;
+        }
+
+        .headers {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .welcome-section h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Stats Grid with Charts */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .courses-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .charts-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .chart-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-title {
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .progress-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .course-progress {
+            background: #ecf0f1;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .course-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        .btn-secondary:hover {
+            background: #d5dbdb;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid,
+            .charts-section {
+                grid-template-columns: 1fr;
+            }
+
+            .progress-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-    <div id="particles-js"></div>
-
-    <style>
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #001f3f, #0074D9);
-            z-index: -1;
-        }
-    </style>
-
-    <script>
-        particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/demo/particles.json');
-    </script>
 
     <!-- header section -->
     <header class="header">
@@ -64,283 +430,255 @@
         </nav>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <div class="box blue" data-aos="flip-up">
-                <div class="icon">
-                    <img src="./image/completed course.png" alt="completed course">
-                </div>
-                <h3>Completed Courses</h3>
-                <p>150+</p>
+
+    <div class="dashboard">
+        <div class="headers">
+            <div class="welcome-section">
+                <h1>Course Dashboard</h1>
+                <p>Welcome back, Alex! Here's your learning analytics.</p>
             </div>
-            <div class="box green" data-aos="flip-up">
-                <div class="icon">
-                    <img src="./image/growth.png" alt="">
-                </div>
-                <h3>Course in Progress</h3>
-                <p>20+</p>
-            </div>
-            <div class="box cyan" data-aos="flip-up">
-                <div class="icon">
-                    <img src="./image/certificate one.png" alt="certificate earned">
-                </div>
-                <h3>Certificate Earned</h3>
-                <p>25+</p>
-            </div>
-            <div class="box orange" data-aos="flip-up">
-                <div class="icon">
-                    <img src="./image/community.png" alt="">
-                </div>
-                <h3>Community Support</h3>
-                <p>15k+</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- section enroll -->
-    <section class="progress-section">
-        <div class="progress-container">
-
-            <!-- Left Side -->
-            <div class="progress-left">
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon green">🎓</div>
-                    <p>Total Enroll Courses</p>
-                    <div class="circle green-circle"><span>5</span></div>
-                </div>
-
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon blue">🎯</div>
-                    <p>Course Completed</p>
-                    <div class="circle blue-circle"><span>1</span></div>
-                </div>
-
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon red">⏳</div>
-                    <p>Hours Spent</p>
-                    <div class="circle red-circle"><span>112h</span></div>
-                </div>
-            </div>
-
-            <!-- Right Side -->
-            <div class="progress-right">
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon orange">📡</div>
-                    <p>Live Class Attended</p>
-                    <div class="circle orange-circle"><span>70%</span></div>
-                </div>
-
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon darkblue">❓</div>
-                    <p>Quiz Practised</p>
-                    <div class="circle darkblue-circle"><span>20/30</span></div>
-                </div>
-
-                <div class="progress-item" data-aos="fade-up">
-                    <div class="progress-icon gray">📘</div>
-                    <p>Assignment Done</p>
-                    <div class="circle gray-circle"><span>✔</span></div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="performance-section">
-        <div class="performance-container" data-aos="fade-up">
-            <h2>Overall Performance</h2>
-
-            <div class="chart">
-                <div class="label" data-aos="fade-up">
-                    <span>Completed Courses</span>
-                    <span>150+</span>
-                </div>
-                <div class="bar" data-aos="fade-up">
-                    <div class="fill blue" style="width: 90%;"></div>
-                </div>
-
-                <div class="label" data-aos="fade-up">
-                    <span>Course in Progress</span>
-                    <span>20+</span>
-                </div>
-                <div class="bar" data-aos="fade-up">
-                    <div class="fill green" style="width: 60%;"></div>
-                </div>
-
-                <div class="label" data-aos="fade-up">
-                    <span>Certificates Earned</span>
-                    <span>25+</span>
-                </div>
-                <div class="bar" data-aos="fade-up">
-                    <div class="fill cyan" style="width: 70%;"></div>
-                </div>
-
-                <div class="label" data-aos="fade-up">
-                    <span>Community Support</span>
-                    <span>15k+</span>
-                </div>
-                <div class="bar" data-aos="fade-up">
-                    <div class="fill orange"  style="width: 100%;"></div>
+            <div class="user-info">
+                <div class="avatar">A</div>
+                <div>
+                    <div style="font-weight: 600; color: #2c3e50;">Alex Johnson</div>
+                    <div style="color: #7f8c8d; font-size: 0.9rem;">Premium Member</div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- section chart -->
-
-    <section class="chart-section" data-aos="fade-up">
-        <div class="chart-box">
-            <h3>Total Users (Online Course)</h3>
-            <canvas id="barChart"></canvas>
-        </div>
-
-        <div class="chart-box">
-            <h3>User Distribution by Category</h3>
-            <canvas id="donutChart"></canvas>
-        </div>
-    </section>
-
-    <!-- section footer -->
-
-    <footer class="footer">
-        <div class="footcontainer">
-            <div class="footting">
-                <img src="./image/logo-removebg-preview.png" alt="company logo">
-                <p>Learning is a celebration We provide courses for your future achievements
-                    And we also Provide world class course to gain Knowledge.
-                </p>
-                <div class="social">
-                    <a href="./error.html"><i class="fab fa-facebook-f"></i></a>
-                    <a href="./error.html"><i class="fab fa-x-twitter"></i></a>
-                    <a href="./error.html"><i class="fab fa-youtube"></i></a>
-                    <a href="./error.html"><i class="fab fa-linkedin-in"></i></a>
+        <!-- Statistics Cards with Mini Charts -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Active Courses</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="coursesChart"></canvas>
                 </div>
             </div>
-
-            <div class="footlink">
-                <h4>Links</h4>
-                <ul>
-                    <li><a href="./about.html">About Us</a></li>
-                    <li><a href="./course.html">Courses</a></li>
-                    <li><a href="./blog.html">Blogs</a></li>
-                    <li><a href="./about.html#team">Team</a></li>
-                    <li><a href="./contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footercol">
-                <h4>More</h4>
-                <ul>
-                    <li><a href="./about.html#features">Features</a></li>
-                    <li><a href="./about.html#admission">Admission</a></li>
-                    <li><a href="./service.html#demo">Request A Demo</a></li>
-                    <li><a href="./service.html#work">How we Work</a></li>
-                    <li><a href="./service.html#membership">Membership Plan</a></li>
-                </ul>
-            </div>
-
-            <div class="footercol">
-                <h4>Contact Info</h4>
-                <p><i class="fa fa-phone"></i> 9968125386</p>
-                <p><i class="fa fa-envelope"></i> stackly@gmail.com</p>
-                <p><i class="fa-solid fa-location-dot"></i><a href=""></a>Gandhi Nagar, Tamil Nadu</p>
-
-                <h4>Download Stackly App</h4>
-                <div class="applinks">
-                    <a href="./error.html"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="google play"></a>
-                    <a href="error.html"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="app store"></a>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-number" data-target="47">0</div>
+                    <div class="stat-label">Total Hours</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="hoursChart"></canvas>
                 </div>
             </div>
-
-            <div class="footerbottom">
-                <p>Copyright 2025. All Rights Reserved by <span>Stackly</span></p>
+            <div class="stat-card">
+                <div class="stat-header">
+                    <div class="stat-number" data-target="92">0</div>
+                    <div class="stat-label">Avg Completion</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="completionChart"></canvas>
+                </div>
             </div>
-    </footer>
+        </div>
 
+        <!-- Main Charts Section -->
+        <div class="charts-section">
+            <div class="chart-card">
+                <h3 class="chart-title">Weekly Progress</h3>
+                <div style="position: relative; height: 350px;">
+                    <canvas id="weeklyChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">Course Distribution</h3>
+                <div style="position: relative; height: 350px;">
+                    <canvas id="distributionChart"></canvas>
+                </div>
+            </div>
+        </div>
 
+        <!-- Courses Section -->
+        <div class="courses-section">
+            <div class="section-header">
+                <h2 class="section-title">Your Courses</h2>
+                <button class="btn btn-primary">+ New Course</button>
+            </div>
+            <div class="progress-container" id="coursesContainer">
+                <!-- Courses populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        // Bar Chart
-        const barCtx = document.getElementById('barChart').getContext('2d');
-        new Chart(barCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-                datasets: [{
-                    label: 'Total Users',
-                    data: [18000, 29000, 24000, 31000, 25000],
-                    backgroundColor: '#42a5f5',
-                    borderRadius: 8,
-                    hoverBackgroundColor: '#1e88e5'
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top',
-                        labels: { color: '#0d47a1', font: { size: 12 } }
+        // Sample data
+        const courses = [
+            { id: 1, title: "Modern JavaScript", progress: 85, lessons: 28, completed: 24, hours: 32, color: '#667eea' },
+            { id: 2, title: "React.js & Next.js", progress: 62, lessons: 35, completed: 22, hours: 28, color: '#f093fb' },
+            { id: 3, title: "Node.js & MongoDB", progress: 45, lessons: 42, completed: 19, hours: 21, color: '#4facfe' },
+            { id: 4, title: "Advanced CSS", progress: 92, lessons: 18, completed: 17, hours: 15, color: '#43e97b' },
+            { id: 5, title: "Python Django", progress: 23, lessons: 52, completed: 12, hours: 8, color: '#fa709a' },
+            { id: 6, title: "Data Structures", progress: 78, lessons: 65, completed: 51, hours: 43, color: '#ff9ff3' }
+        ];
+
+        const weeklyData = [8, 12, 6, 15, 10, 18, 22];
+        const courseHours = courses.map(c => c.hours);
+        const completionRates = courses.map(c => c.progress);
+
+        // Animate counters
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const increment = target / 100;
+                let current = 0;
+                const updateCounter = () => {
+                    if (current < target) {
+                        current += increment;
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
                     }
+                };
+                updateCounter();
+            });
+        }
+
+        // Initialize Charts
+        function initCharts() {
+            // Mini Charts in Stats Cards
+            new Chart(document.getElementById('coursesChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Completed', 'Remaining'],
+                    datasets: [{
+                        data: [6, 6],
+                        backgroundColor: ['#43e97b', '#ecf0f1'],
+                        borderWidth: 0
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: { color: '#1565c0', stepSize: 5000 },
-                        grid: { color: 'rgba(21, 101, 192, 0.1)' }
-                    },
-                    x: {
-                        ticks: { color: '#1565c0' },
-                        grid: { display: false }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%'
+                }
+            });
+
+            new Chart(document.getElementById('hoursChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+                    datasets: [{
+                        data: [5, 8, 6, 12, 16],
+                        backgroundColor: '#667eea',
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: { y: { display: false }, x: { display: false } }
+                }
+            });
+
+            new Chart(document.getElementById('completionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Avg 92%', 'Target 100%'],
+                    datasets: [{
+                        data: [92, 8],
+                        backgroundColor: ['#667eea', '#ecf0f1'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '70%'
+                }
+            });
+
+            // Main Weekly Progress Chart
+            new Chart(document.getElementById('weeklyChart'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Hours Learned',
+                        data: weeklyData,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true }
                     }
                 }
-            }
-        });
+            });
 
-        // Donut Chart
-        const donutCtx = document.getElementById('donutChart').getContext('2d');
-        new Chart(donutCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['India', 'USA', 'UK', 'Other'],
-                datasets: [{
-                    label: 'Users',
-                    data: [55, 25, 10, 10],
-                    backgroundColor: ['#2196f3', '#64b5f6', '#90caf9', '#1976d2'],
-                    borderColor: '#fff',
-                    borderWidth: 3,
-                    hoverOffset: 10
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: {
-                        position: 'top',
-                        labels: { color: '#0d47a1', font: { size: 13 } }
-                    },
+            // Course Distribution Chart
+            new Chart(document.getElementById('distributionChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: courses.map(c => c.title.slice(0, 15) + '...'),
+                    datasets: [{
+                        data: courseHours,
+                        backgroundColor: courses.map(c => c.color),
+                        borderWidth: 2,
+                        borderColor: '#fff'
+                    }]
                 },
-                cutout: '65%',
-            }
-        });
-    </script>
-
-    <script>
-        // $(document).on('ready', function () {
-        // initialization of aos
-        AOS.init({
-            duration: 650,
-            once: false,
-            mirror: true,
-        });
-    </script>
-
-
-
-    <script>
-        function toggleMenu() {
-            document.querySelector(".nav-links").classList.toggle("show");
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
         }
+
+        // Create course cards
+        function createCourseCards() {
+            const container = document.getElementById('coursesContainer');
+            courses.forEach(course => {
+                const card = document.createElement('div');
+                card.className = 'course-card';
+                card.style.borderLeftColor = course.color;
+                card.innerHTML = `
+                    <div class="course-header">
+                        <div>
+                            <div class="course-title">${course.title}</div>
+                            <div class="progress-text">${course.completed}/${course.lessons} lessons</div>
+                        </div>
+                        <div style="color: ${course.color}; font-weight: bold; font-size: 1.2rem;">${course.progress}%</div>
+                    </div>
+                    <div class="course-progress">
+                        <div class="progress-bar" style="width: ${course.progress}%"></div>
+                    </div>
+                    <div class="course-actions">
+                        <button class="btn btn-primary" onclick="continueCourse(${course.id})">Continue</button>
+                        <button class="btn btn-secondary" onclick="viewCourse(${course.id})">View</button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function continueCourse(courseId) {
+            alert(`Continuing course ${courseId}...`);
+        }
+
+        function viewCourse(courseId) {
+            alert(`Viewing course ${courseId}...`);
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', function () {
+            createCourseCards();
+            setTimeout(() => {
+                animateCounters();
+                initCharts();
+            }, 500);
+        });
     </script>
 </body>
 
