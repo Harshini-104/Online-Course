@@ -4,7 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Course Dashboard with Charts</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="../../assets/vendor/aos/dist/aos.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+        integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
@@ -167,7 +183,7 @@
 
         .welcome-section h1 {
             color: #2c3e50;
-            font-size: 2.5rem;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
@@ -185,7 +201,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 24px;
             color: white;
             font-weight: bold;
         }
@@ -232,14 +248,14 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 40px;
             font-weight: bold;
             color: #2c3e50;
         }
 
         .stat-label {
             color: #7f8c8d;
-            font-size: 1.1rem;
+            font-size: 16px;
             font-weight: 500;
         }
 
@@ -274,7 +290,7 @@
         }
 
         .chart-title {
-            font-size: 1.4rem;
+            font-size: 22px;
             color: #2c3e50;
             margin-bottom: 20px;
             font-weight: 600;
@@ -288,7 +304,7 @@
         }
 
         .section-title {
-            font-size: 1.8rem;
+            font-size: 28px;
             color: #2c3e50;
             font-weight: 600;
         }
@@ -321,7 +337,7 @@
         }
 
         .course-title {
-            font-size: 1.3rem;
+            font-size: 21px;
             font-weight: 600;
             color: #2c3e50;
             margin-bottom: 5px;
@@ -343,7 +359,7 @@
         }
 
         .progress-text {
-            font-size: 0.9rem;
+            font-size: 15px;
             color: #7f8c8d;
             font-weight: 500;
         }
@@ -361,7 +377,7 @@
             font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-size: 0.9rem;
+            font-size: 15px;
         }
 
         .btn-primary {
@@ -384,24 +400,111 @@
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
+        
+        @media (max-width: 1024px) {
+
+            .dashboard {
+                padding: 100px 15px;
+            }
+
+            .headers {
+                padding: 25px;
             }
 
             .welcome-section h1 {
-                font-size: 2rem;
+                font-size: 35px;
             }
 
-            .stats-grid,
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .charts-section {
                 grid-template-columns: 1fr;
             }
+        }
 
+
+        
+        @media (max-width: 768px) {
+
+            .headers {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                
+            }
+
+            .welcome-section h1 {
+                font-size: 32px;
+            }
+
+            .welcome-section p {
+                font-size: 15px;
+            }
+
+            .avatar {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+
+            .stats-grid,
+            .charts-section,
             .progress-container {
                 grid-template-columns: 1fr;
+            }
+
+            .stat-card,
+            .chart-card,
+            .courses-section {
+                padding: 20px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .chart-title {
+                font-size: 20px;
+            }
+
+            .course-card {
+                padding: 20px;
+            }
+
+            .course-actions {
+                flex-direction: column;
+            }
+
+            .course-actions .btn {
+                width: 100%;
+            }
+        }
+
+
+        
+        @media (max-width: 480px) {
+
+            .welcome-section h1 {
+                font-size: 28px;
+            }
+
+            .welcome-section p {
+                font-size: 15px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+
+            .stat-number {
+                font-size: 28px;
+            }
+
+            .btn {
+                font-size: 15px;
+                padding: 10px;
             }
         }
     </style>
@@ -432,7 +535,7 @@
 
 
     <div class="dashboard">
-        <div class="headers">
+        <div class="headers" data-aos="zoom-in">
             <div class="welcome-section">
                 <h1>Course Dashboard</h1>
                 <p>Welcome back, Alex! Here's your learning analytics.</p>
@@ -448,7 +551,7 @@
 
         <!-- Statistics Cards with Mini Charts -->
         <div class="stats-grid">
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in">
                 <div class="stat-header">
                     <div class="stat-number" data-target="12">0</div>
                     <div class="stat-label">Active Courses</div>
@@ -457,7 +560,7 @@
                     <canvas id="coursesChart"></canvas>
                 </div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in">
                 <div class="stat-header">
                     <div class="stat-number" data-target="47">0</div>
                     <div class="stat-label">Total Hours</div>
@@ -466,7 +569,7 @@
                     <canvas id="hoursChart"></canvas>
                 </div>
             </div>
-            <div class="stat-card">
+            <div class="stat-card" data-aos="zoom-in">
                 <div class="stat-header">
                     <div class="stat-number" data-target="92">0</div>
                     <div class="stat-label">Avg Completion</div>
@@ -479,13 +582,13 @@
 
         <!-- Main Charts Section -->
         <div class="charts-section">
-            <div class="chart-card">
+            <div class="chart-card" data-aos="zoom-in">
                 <h3 class="chart-title">Weekly Progress</h3>
                 <div style="position: relative; height: 350px;">
                     <canvas id="weeklyChart"></canvas>
                 </div>
             </div>
-            <div class="chart-card">
+            <div class="chart-card" data-aos="zoom-in">
                 <h3 class="chart-title">Course Distribution</h3>
                 <div style="position: relative; height: 350px;">
                     <canvas id="distributionChart"></canvas>
@@ -494,7 +597,7 @@
         </div>
 
         <!-- Courses Section -->
-        <div class="courses-section">
+        <div class="courses-section" data-aos="zoom-in">
             <div class="section-header">
                 <h2 class="section-title">Your Courses</h2>
                 <button class="btn btn-primary">+ New Course</button>
@@ -678,6 +781,22 @@
                 animateCounters();
                 initCharts();
             }, 500);
+        });
+    </script>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        // $(document).on('ready', function () {
+        // initialization of aos
+        AOS.init({
+            duration: 650,
+            once: false,
+            mirror: true,
         });
     </script>
 </body>
